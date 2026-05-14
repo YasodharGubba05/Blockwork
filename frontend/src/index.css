@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #131110;
+    color: #e2ddd8;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* monospace for anything data/number-y */
+  .mono {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Mono', 'Consolas', monospace;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a3530;
+    border-radius: 2px;
+  }
+
+  input, button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  ::selection {
+    background: rgba(251, 191, 36, 0.25);
+  }
+}
+
+@layer components {
+  /* flat surface, no blur */
+  .surface {
+    background: #1c1917;
+    border: 1px solid #2e2b28;
+  }
+
+  .surface-raised {
+    background: #222019;
+    border: 1px solid #333028;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #2e2b28;
+  }
+
+  /* form inputs */
+  .field {
+    width: 100%;
+    padding: 10px 12px;
+    background: #111009;
+    border: 1px solid #2e2b28;
+    border-radius: 4px;
+    color: #e2ddd8;
+    outline: none;
+    transition: border-color 0.15s;
+    font-size: 14px;
+  }
+  .field:focus {
+    border-color: #f59e0b;
+  }
+  .field::placeholder {
+    color: #57534e;
+  }
+
+  /* primary action */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: #f59e0b;
+    color: #0c0a08;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover {
+    background: #fbbf24;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn:disabled {
+    background: #3a3530;
+    color: #57534e;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* label style */
+  .label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #78716c;
+    margin-bottom: 8px;
+  }
+
+  /* dot indicators */
+  .dot-green { background: #4ade80; }
+  .dot-red   { background: #f87171; }
+}
